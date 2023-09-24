@@ -1,0 +1,47 @@
+/* App.css */
+.banner img{
+    background-size: cover;
+    width: 100%;
+    object-fit: contain;     /* the best fit */ 
+}
+
+.banner h1{
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    text-shadow: 10px 15px 20px rgba(0,0,0,0.7);
+}
+
+.banner p{
+    position: absolute;
+    top: 33%;
+    left: 40%;
+    text-shadow: 10px 15px 20px rgba(0,0,0,0.7);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff
+}
+
+@media (max-width: 768px) {
+    .banner h1{
+        font-size: 1.5rem;
+        text-wrap: nowrap;
+        top: 18%;
+        left: 30%;
+    }
+
+    .banner p{
+        font-size: 1.3rem;
+        top: 28%;
+        left: 30%;
+    }
+    .banner img{
+        width: 100%;
+        object-fit: cover;
+        height: 150px;
+    }
+}

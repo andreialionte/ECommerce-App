@@ -1,0 +1,45 @@
+/* Container for the grid of items */
+.itemsOrder {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 20px; /* Gap between items */
+    margin: 20px;
+  }
+  
+  /* Individual item style */
+  .items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text horizontally */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12); /* Add a small shadow */
+  }
+
+  .items h1,p{
+    font-weight: 700;
+  }
+
+  .items h5{
+    font-weight: 400;
+  }
+  
+  /* Style for the item images */
+  .items img {
+    height: 240px;    
+    width: 200px;
+    border-radius: 5px;
+  }
+  
+
+  @media screen and (max-width: 1000px) {
+    .itemsOrder {
+      grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    }
+    .items img{
+        height: 150px;
+        width: 150px;
+        }
+  }

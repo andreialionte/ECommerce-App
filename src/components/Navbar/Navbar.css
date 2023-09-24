@@ -1,0 +1,70 @@
+/* Navbar CSS */
+.navbar {
+  color: black;
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: white; /* Set the background color to white */
+  z-index: 1; /* Stay on top of everything */
+}
+
+
+.navbar h1 {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar .navbar-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar .user-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar p{
+  cursor: pointer;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-hidden {
+  display: none;
+}
+
+.cart-items {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid black;
+  padding: 1rem;
+  z-index: 2;
+}
+
+/* Hide user actions and show menu icon when screen width <= 768px */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    text-align: center; /* Center-align text on smaller screens */
+  }
+
+  .navbar .user-actions {
+    display: none; /* Hide user actions on smaller screens */
+  }
+
+  .navbar .menu-icon {
+    display: block; /* Show menu icon on smaller screens */
+  }
+
+  .navbar .navbar-links {
+    display: none; /* Hide nav links by default on smaller screens */
+  }
+}

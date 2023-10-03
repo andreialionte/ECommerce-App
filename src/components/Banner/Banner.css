@@ -30,18 +30,19 @@
     .banner h1{
         font-size: 1.5rem;
         text-wrap: nowrap;
-        top: 18%;
+        top: 25%;
         left: 30%;
+        white-space: nowrap;
     }
 
     .banner p{
         font-size: 1.3rem;
-        top: 28%;
+        top: 30%;
         left: 30%;
     }
     .banner img{
         width: 100%;
-        object-fit: cover;
-        height: 150px;
+        object-fit:cover;
+        height: 360px;
     }
 }

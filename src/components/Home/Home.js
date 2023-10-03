@@ -1,11 +1,13 @@
 import React, { Fragment, useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import Banner from "../Banner/Banner";
+
 import "./Home.css";
 
 const Home = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState([]);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,11 +30,16 @@ const Home = () => {
     fetchData();
   }, []);
 
+
+
   return (
     <Fragment>
       <Navbar />
       <Banner />
+      <div className="center">
       <h1>Latest Products</h1>
+      <div className="underline"></div>
+      </div>
       <div className="itemsOrder">
         {data.map((item) => {
           return (

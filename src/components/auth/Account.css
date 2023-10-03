@@ -1,0 +1,210 @@
+/* Account.css */
+body{
+    background-color: #C5CC15;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 800px;
+    width: 1000px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Smaller box shadow */
+    border-radius: 10px;
+    background-color: #fff;
+    position: fixed; /* Stay in place */
+    top: 50%;  /* Position the box 50% from the top and the left edge */
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    gap: 20px;
+  }
+
+  .container h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+
+  
+  .acc {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .acc2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+
+  }
+ 
+  .acc button{  
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    height: 50px;
+    width: 80px;
+    background-color: #E0E0E0;
+  }
+
+  .acc button.selected{
+    background-color: #C5CC15;
+  }
+   
+ .login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); /* Smaller box shadow */
+  }
+
+  .login h1{
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .login input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-bottom: 2px solid #E0E0E0;
+    outline: none;
+  }
+
+  .login input:focus{
+    border-bottom: 2px solid #C5CC15;
+  }
+
+  .login .but{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    /* background-color: #E0E0E0; */
+    background-color: #C5CC15;
+  }
+  .login .error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 10px;
+    height: 50px;
+    width: 100px;
+    background-color: #E0E0E0;
+    cursor: not-allowed;
+  }
+
+.reg{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3)
+}
+
+.reg input{
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #E0E0E0;
+  outline: none;
+}
+
+.reg h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.reg input:focus{
+  border-bottom: 2px solid #C5CC15;
+}
+
+.reg .but{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+  /* background-color: #E0E0E0; */
+  background-color: #C5CC15;
+  cursor: pointer;
+}
+.reg .error{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+  background-color: #E0E0E0;
+  cursor: not-allowed;
+}
+
+.login .redd{
+  color: red;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.reg .redd{
+  color: red;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.login .social-buttons-login {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.login .social-buttons-login button {
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  height: 50px;
+  width: 100px;
+  background-color: #E0E0E0;
+  outline: none; /* Add this line to remove the outline */
+  height: 50px;
+  width: 100px;
+}
+

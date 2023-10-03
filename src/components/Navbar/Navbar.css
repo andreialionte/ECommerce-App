@@ -7,10 +7,9 @@
   align-items: center;
   position: fixed;
   width: 100%;
-  background-color: white; /* Set the background color to white */
-  z-index: 1; /* Stay on top of everything */
+  background-color: white;
+  z-index: 1;
 }
-
 
 .navbar h1 {
   text-transform: uppercase;
@@ -24,15 +23,17 @@
 
 .navbar .user-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+  align-items: center; /* Align icons and text vertically */
 }
 
-.navbar p{
+.navbar p {
   cursor: pointer;
 }
 
 .cart {
-  position: relative;
+
+  cursor: pointer;
 }
 
 .cart-hidden {
@@ -42,29 +43,64 @@
 .cart-items {
   position: absolute;
   top: 100%;
+  height: 400px;
+  width: 300px;
   right: 0;
   background-color: white;
   border: 1px solid black;
   padding: 1rem;
-  z-index: 2;
+  overflow-y: scroll;
 }
 
-/* Hide user actions and show menu icon when screen width <= 768px */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
-    text-align: center; /* Center-align text on smaller screens */
-  }
-
-  .navbar .user-actions {
-    display: none; /* Hide user actions on smaller screens */
-  }
-
-  .navbar .menu-icon {
-    display: block; /* Show menu icon on smaller screens */
-  }
-
-  .navbar .navbar-links {
-    display: none; /* Hide nav links by default on smaller screens */
-  }
+/* Add styles for user icons and links */
+.user-link {
+  text-decoration: none; /* Remove underlines from links */
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Adjust the gap between icon and text as needed */
+  cursor: pointer;
 }
+
+.user-icon {
+  width: 25px;
+  height: 20px;
+  border-radius: 50%;
+  /* Add any other styling for your icons */
+}
+
+.cart-link {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+}
+
+.cart-icon {
+  width: 20px;
+  height: 25px;
+}
+
+
+.cart-icon {
+  width: 20px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.link-text {
+  margin-left: 8px; /* spacing between icon and text */
+}
+
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .50); 
+  transition: background-color 1s ease-in-out;
+}
+
+
+
+
+

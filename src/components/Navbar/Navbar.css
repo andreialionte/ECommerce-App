@@ -1,4 +1,4 @@
-/* Navbar CSS */
+
 .navbar {
   color: black;
   padding: 0.7rem;
@@ -9,7 +9,9 @@
   width: 100%;
   background-color: white;
   z-index: 1;
+  top: 0; 
 }
+
 
 .navbar h1 {
   text-transform: uppercase;
@@ -24,40 +26,82 @@
 .navbar .user-actions {
   display: flex;
   gap: 1.2rem;
-  align-items: center; /* Align icons and text vertically */
+  align-items: center; 
 }
 
 .navbar p {
   cursor: pointer;
 }
 
-.cart {
-
-  cursor: pointer;
-}
-
 .cart-hidden {
-  display: none;
+  display: none; 
 }
 
 .cart-items {
   position: absolute;
   top: 100%;
-  height: 400px;
-  width: 300px;
+  width: 800px;
   right: 0;
   background-color: white;
   border: 1px solid black;
-  padding: 1rem;
+  max-height: 400px;
   overflow-y: scroll;
 }
 
-/* Add styles for user icons and links */
-.user-link {
-  text-decoration: none; /* Remove underlines from links */
+
+.shows{
   display: flex;
   align-items: center;
-  gap: 5px; /* Adjust the gap between icon and text as needed */
+  width: 100%;
+  height: 100%;
+  gap: 10px;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.shows h1{
+  font-size: 20px;
+}
+
+.shows img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  background-image: cover;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.quantity input{
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+
+.cart-items h1{
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.user-link {
+  text-decoration: none; 
+  display: flex;
+  align-items: center;
+  gap: 5px; 
   cursor: pointer;
 }
 
@@ -65,7 +109,6 @@
   width: 25px;
   height: 20px;
   border-radius: 50%;
-  /* Add any other styling for your icons */
 }
 
 .cart-link {
@@ -87,7 +130,7 @@
 }
 
 .link-text {
-  margin-left: 8px; /* spacing between icon and text */
+  margin-left: 8px; 
 }
 
 .cart-backdrop {
@@ -97,8 +140,51 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .50); 
-  transition: background-color 1s ease-in-out;
 }
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .user-link .link-text h1,
+  .cart-link .link-text h1,
+  .favorites-link .link-text h1 {
+    display: none;
+  }
+
+  .user-link,
+  .cart-link,
+  .favorites-link {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .user-icon,
+  .cart-icon,
+  .favorites-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 5px 0; 
+  }
+
+
+}
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 
 

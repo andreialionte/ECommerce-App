@@ -75,7 +75,7 @@ function Register() {
           displayName: name,
         });
         notify();
-        notify.done(() => { // alternative way to setTimeout(() => {});
+        notify.done(() => { 
           navigate("/");
         })
       }catch(error){

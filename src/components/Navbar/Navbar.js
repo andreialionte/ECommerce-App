@@ -1,16 +1,24 @@
-import React, { useState } from "react";
-import "./Navbar.css"; // Import the CSS file
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate hook
+import React, { useState, useEffect } from "react";
+import "./Navbar.css";
+import { Link, useNavigate } from "react-router-dom";
 import Login from "../auth/Login";
 import Products from "../Products/Products";
 import heart from "../assets/heart-svgrepo-com.svg";
 import user from "../assets/user-svgrepo-com.svg";
 import cart from "../assets/cart-shopping-svgrepo-com.svg";
 import { auth } from "../auth/firebase";
+import { toast, ToastContainer } from "react-toastify";
+import { useSelector, useDispatch } from "react-redux"; 
+import { addToCart, removeFromCart, setProductCount } from "../../store/store";
 
-const Navbar = () => {
+
+const Navbar = (props) => {
   const [showCart, setShowCart] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
+
+  const cartProd = useSelector((state) => state.cart.cartProd);
+  const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
 
   const handleShowCart = () => {
     setShowCart(!showCart);
@@ -26,6 +34,21 @@ const Navbar = () => {
     }
   };
 
+  const handleFavoritesCart = () => {
+    if (auth.currentUser) {
+      navigate(`/favorites/${auth.currentUser.uid}`);
+    } else {
+      navigate(`/login`);
+    }
+  };
+
+  const handleSignOut = () => {
+    auth.signOut();
+    window.location.reload();
+  };
+
+
+
 
   return (
     <div className="navbar">
@@ -35,32 +58,67 @@ const Navbar = () => {
       <div className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/products">Product</Link>
-        <p>Contact</p>
       </div>
       <div className="user-actions">
-        <div className="user-link" onClick={handlePersonalAccount}>
-          <img src={user} alt="User" className="user-icon" />
-          {auth.currentUser ? auth.currentUser.displayName : <Link to="/account">Account</Link>}
+        <div className="user-link">
+          <div className="user-icon-container">
+            {auth.currentUser ? (
+              <div onClick={handlePersonalAccount}>
+                <img src={user} alt="User" className="user-icon" />
+              </div>
+            ) : (
+              <Link to="/account">
+                <img src={user} alt="User" className="user-icon" />
+              </Link>
+            )}
+          </div>
+          <div className="link-text">
+            {auth.currentUser ? auth.currentUser.displayName : <Link to="/account"><h1>Account</h1></Link>}
+          </div>
         </div>
-        {auth.currentUser ? (
-            <button onClick={() => {auth.signOut(); window.location.reload(); }}>| Sign out |</button> 
-          ) : ""}
-        <Link to="/favorites" className="user-link">
-          <img src={heart} alt="Favorites" className="user-icon" />
-          Favorites
-        </Link>
+        {auth.currentUser && <button onClick={handleSignOut}> | Sign Out |</button>}
+
         <p onClick={handleShowCart} className="cart-link">
-          <img src={cart} alt="Cart" className="cart-icon" />
-          Cart
+          <div className="cart-icon-container">
+            <img src={cart} alt="Cart" className="cart-icon" />
+          </div>
+          <div className="link-text">
+            <h1>Cart</h1>
+          </div>
         </p>
-        <div className={`cart ${showCart ? "" : "cart-hidden"}`} onClick={handleShowCart}>
+
+        <div className={`cart ${showCart ? "" : "cart-hidden"}`}>
           <div className={`cart-backdrop ${showCart ? "" : "cart-hidden"}`} onClick={handleCloseCart}></div>
           <div className="cart-items">
             <h1>Shopping Bag</h1>
             <div className="items">
-              <img src="" alt="" />
-              <h1>Product</h1>
-              <p>Price</p>
+              {cartProd && cartProd.length > 0 ? (
+                cartProd.map((item) => (
+                  <div className="shows" key={item.id}>
+                    <img src={item.image} alt="product" />
+                    <h1>{item.title}</h1>
+                    <p>${item.price}</p>
+                    <div className="buttons">
+                      <button onClick={() => dispatch(addToCart(item))}>Add</button>
+                      <button onClick={() => props.handleRemoveFromCart(item)}>Remove</button>
+                    </div>
+                    <div className="quantity">
+                      <input
+                        type="number"
+                        min="1"
+                        max="10"
+                        onChange={(event) => dispatch(setProductCount(event.target.value))}
+                        value={products}
+                      />
+                    </div>
+                    <div>
+                      <button>Check out (totalPrice)</button>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <p>Your cart is empty.</p>
+              )}
             </div>
           </div>
         </div>

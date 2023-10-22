@@ -1,6 +1,6 @@
 /* Account.css */
 body{
-    background-color: #C5CC15;
+  background-color: #C5CC15;
 }
 
 .container {
@@ -10,11 +10,11 @@ body{
     flex-direction: column;
     height: 800px;
     width: 1000px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); /* Smaller box shadow */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); 
     border-radius: 10px;
     background-color: #fff;
-    position: fixed; /* Stay in place */
-    top: 50%;  /* Position the box 50% from the top and the left edge */
+    position: fixed; 
+    top: 50%;  
     left: 50%; 
     transform: translate(-50%, -50%);
     gap: 20px;
@@ -64,7 +64,7 @@ body{
     justify-content: center;
     border-radius: 10px;
     background-color: #fff;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); /* Smaller box shadow */
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3); 
   }
 
   .login h1{
@@ -203,7 +203,7 @@ body{
   height: 50px;
   width: 100px;
   background-color: #E0E0E0;
-  outline: none; /* Add this line to remove the outline */
+  outline: none;
   height: 50px;
   width: 100px;
 }
